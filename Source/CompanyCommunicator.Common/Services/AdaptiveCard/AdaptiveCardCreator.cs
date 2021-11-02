@@ -79,6 +79,7 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.AdaptiveCard
                     {
                         Text = par,
                         Wrap = true,
+                        Spacing = AdaptiveSpacing.Small,
                     });
                 }
             }
