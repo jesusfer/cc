@@ -72,11 +72,15 @@ namespace Microsoft.Teams.Apps.CompanyCommunicator.Common.Services.AdaptiveCard
 
             if (!string.IsNullOrWhiteSpace(summary))
             {
-                card.Body.Add(new AdaptiveTextBlock()
+                var paragraphs = summary.Split("\n");
+                foreach (var par in paragraphs)
                 {
-                    Text = summary,
-                    Wrap = true,
-                });
+                    card.Body.Add(new AdaptiveTextBlock()
+                    {
+                        Text = par,
+                        Wrap = true,
+                    });
+                }
             }
 
             if (!string.IsNullOrWhiteSpace(author))
